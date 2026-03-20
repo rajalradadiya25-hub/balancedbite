@@ -1,0 +1,247 @@
+.main-content {
+    margin-left: 280px;
+    padding: 20px;
+    width: calc(100% - 280px);
+    flex: 1;
+}
+
+.unit-button {
+    background-color: rgb(0, 128, 0);
+    /* Vibrant green */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s;
+}
+
+.unit-button:hover {
+    background-color: #004d00;
+}
+
+.character {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.character img {
+    width: 230px;
+    height: 300px;
+    transition: transform 0.3s;
+}
+
+.character img:hover {
+    transform: scale(1.1);
+}
+
+.btn-custom {
+    width: 60px;
+    margin: 5px;
+    padding: 2px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.btn-custom:hover {
+    transform: scale(1.1);
+}
+
+.btn-outline-secondary {
+    color: white;
+    background-color: rgb(0, 128, 0);
+}
+
+.btn-inches {
+    background-color: #6c757d;
+    color: white;
+}
+
+.gender-selection {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center; /* Center the buttons horizontally */
+}
+
+.gender-option {
+    padding: 10px 70px;
+    border-radius: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    display: inline-block;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.gender-option:last-child {
+    margin-right: 0; /* Remove the margin from the last button */
+}
+
+.gender-option:hover {
+    transform: scale(1.1);
+}
+
+.gender-option.selected {
+    background-color: rgb(0, 128, 0);
+    color: white;
+}
+
+.gender-option.unselected {
+    background-color: #f8f9fa;
+    color: #6c757d;
+}
+
+.weight-selector {
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.weight-values {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    width: 400px;
+    margin: 0 10px;
+}
+
+.weight-values::-webkit-scrollbar {
+    display: none;
+}
+
+.weight-value {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    scroll-snap-align: center;
+    color: rgba(0, 128, 0, 0.7);
+    cursor: pointer;
+}
+
+.weight-value:hover {
+    color: rgb(0, 128, 0);
+    font-size: 20px;
+}
+
+.selected {
+    background-color: #ddd;
+    color: rgba(0, 128, 0, 0.7);
+}
+
+.scroll-button {
+    cursor: pointer;
+    background-color: #ddd;
+    border: none;
+    padding: 10px;
+    width: 50px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.scroll-button-weight {
+    cursor: pointer;
+    background-color: #ddd;
+    border: none;
+    padding: 10px;
+    width: 60px;
+    height: 45px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.scroll-button:hover {
+    background-color: rgba(0, 128, 0, 0.7);
+    transform: scale(1.1);
+    color: white;
+}
+
+.scroll-button-weight:hover {
+    background-color: rgba(0, 128, 0, 0.7);
+    transform: scale(1.1);
+    color: white;
+}
+
+.height-selection {
+    margin-bottom: 20px;
+}
+
+label {
+    margin-right: 10px;
+}
+
+.height-selector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.height-values {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    height: 200px;
+    margin: 10px 0;
+}
+
+.height-values::-webkit-scrollbar {
+    display: none;
+}
+
+.height-value {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    scroll-snap-align: center;
+    color: rgba(0, 128, 0, 0.7);
+    cursor: pointer;
+}
+
+.height-value:hover {
+    color: rgb(0, 128, 0);
+    font-size: 20px;
+}
+
+.btn-calculate {
+    background-color: rgb(0, 128, 0);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    /* Reduced padding */
+    cursor: pointer;
+    font-size: 14px;
+    /* Smaller font size */
+    transition: transform 0.3s ease-in-out, background-color 0.3s;
+    border-radius: 15px;
+    /* Border radius */
+    width: 75%;
+    /* Block-level element */
+    margin-left: 90px;
+}
+
+.btn-calculate:hover {
+    transform: scale(1.1);
+    background-color: rgb(0, 100, 0);
+    /* Slightly darker green on hover */
+}
+
+
+.content-box {
+    border: 2px solid #008000;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    /* Center the box horizontally */
+    width: 900px;
+}

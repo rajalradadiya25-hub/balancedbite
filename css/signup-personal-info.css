@@ -1,0 +1,317 @@
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+.progress-step {
+    cursor: pointer;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: lightgray;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 25px;
+    margin: 5px;
+}
+
+.progress-step.active {
+    background-color: green;
+    color: white;
+}
+
+.box {
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.2),
+        /* Main shadow */
+        0 6px 20px rgba(0, 0, 0, 0.19),
+        /* Larger shadow */
+        0 12px 12px rgba(0, 0, 0, 0.15);
+    /* Softer shadow */
+    opacity: 0;
+    /* Initially invisible */
+    transform: translateY(-50px);
+    /* Start position */
+    animation: appear 2s ease-in-out forwards;
+    /* Animation */
+    height: 800px;
+}
+
+@keyframes appear {
+    to {
+        opacity: 1;
+        /* Fully visible */
+        transform: translateY(0);
+        /* Final position */
+    }
+}
+
+.box:hover {
+    transform: scale(1.05);
+    /* Slightly enlarge on hover */
+}
+
+.btncontinue {
+    background: #28a745;
+    border: none;
+    font-weight: bold;
+    transition: 0.3s ease;
+    border-radius: 30px;
+    padding: 10px 30px;
+    font-size: 18px;
+}
+
+.btncontinue:hover {
+    background: #218838;
+    transform: scale(1.05);
+}
+
+/* -----------------------------------------------------------------------sesction 1 */
+
+/* Hide Default Radio Button */
+.hidden-radio {
+    display: none;
+}
+
+/* Diet Options Grid */
+.diet-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Diet Option Styling */
+.diet-option {
+    background: #ffffff;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 15px;
+    border-radius: 10px;
+    border: 2px solid #dee2e6;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    display: block;
+    font-size: 18px;
+    font-weight: 500;
+    color: #2d6a4f;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover Effect */
+.diet-option:hover {
+    background: #e9f7ef;
+    border-color: #2d6a4f;
+    box-shadow: 0 4px 10px rgba(45, 106, 79, 0.2);
+    transform: scale(1.02);
+}
+
+/* Selected State */
+.radio-group:has(.hidden-radio:checked) .diet-option {
+    background: #e9f7ef;
+    border-color: #2d6a4f;
+    box-shadow: 0 4px 10px rgba(45, 106, 79, 0.2);
+}
+
+/* Option Title */
+.option-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Description Text */
+small {
+    font-size: 14px;
+    color: #6c757d;
+}
+
+/* Icons */
+.option-icon {
+    font-size: 24px;
+    margin-right: 10px;
+    color: #2d6a4f;
+}
+
+
+/* -----------------------------------------------------------------------section 2 */
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    height: 300px;
+    /* Fixed height */
+    justify-content: center;
+    /* Centers the options vertically */
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    padding: 12px 20px;
+    border-radius: 10px;
+    border: 2px solid #dee2e6;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    color: #2d6a4f;
+    position: relative;
+}
+
+.option:hover {
+    background: #e9f7ef;
+    border-color: #2d6a4f;
+    box-shadow: 0 4px 10px rgba(45, 106, 79, 0.2);
+    transform: scale(1.03);
+}
+
+/* Hide default radio button */
+.option input[type="radio"] {
+    display: none;
+}
+
+/* Custom radio button */
+.custom-radio {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #2d6a4f;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Selected state */
+.option input[type="radio"]:checked+.custom-radio {
+    background: #2d6a4f;
+    border-color: #2d6a4f;
+}
+
+/* Inner circle for selected radio */
+.option input[type="radio"]:checked+.custom-radio::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* -----------------------------------------------------------------------section 3 */
+.form-container1 {
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid #dee2e6;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 800px;
+    padding: 20px;
+}
+
+.form-group1 {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    color: #2d6a4f;
+    /* Matching Balanced Bite theme */
+}
+
+.form-row1 {
+    display: flex;
+    gap: 15px;
+}
+
+.form-group1 label {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.form-group1 select,
+input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #2d6a4f;
+    border-radius: 5px;
+    background: transparent;
+    color: #2d6a4f;
+}
+
+.form-group1 select:focus,
+input:focus {
+    border-color: #218838;
+    outline: none;
+    box-shadow: 0 0 5px rgba(33, 136, 56, 0.5);
+}
+
+/* -----------------------------------------------------------------------section 4 */
+.nutrition-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #dee2e6;
+    color: #2d6a4f;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: auto;
+}
+
+.nutrition-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.nutrition-label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #2d6a4f;
+}
+
+.nutrition-input,
+.range-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #2d6a4f;
+    border-radius: 5px;
+    background: transparent;
+    color: #2d6a4f;
+}
+
+.nutrition-input:focus,
+.range-input:focus {
+    border-color: #218838;
+    outline: none;
+    box-shadow: 0 0 5px rgba(33, 136, 56, 0.5);
+}
+
+.range-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.range-label {
+    background: #2d6a4f;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    min-width: 40px;
+    text-align: center;
+}
+
+/* -----------------------------------------------------------------------section 5 */

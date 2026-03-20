@@ -1,0 +1,356 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.display-4 {
+    font-size: 2rem;
+    font-weight: bold;
+    padding-top: 50px;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
+.background {
+    position: absolute;
+    top: 72%;
+    left: 226px;
+    width: 350px;
+    height: 530px;
+    z-index: -1;
+    background-color: rgb(0, 128, 0);
+    transform: translate(-50%, -50%);
+}
+
+.larger-image {
+    position: absolute;
+    top: 70%;
+    left: 210px;
+    width: 600px;
+    height: auto;
+    transform: translate(-50%, -50%);
+    animation: rotate360 2s ease-out forwards;
+}
+
+/* Animation: Rotate 360 degrees and stop at original position */
+@keyframes rotate360 {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(20deg);
+    }
+}
+
+/* Hover Effect: Rotate and Scale */
+.larger-image:hover {
+    transform: translate(-50%, -50%) rotate(15deg) scale(1.1);
+    transition: transform 0.6s ease-in-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .image-container {
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .background {
+        width: 0%;
+        height: 0;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .larger-image {
+        width: 0%;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Heading Animation */
+.header-section .display-4 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInUp 1s ease-in-out forwards;
+    color: #006400;
+}
+
+/* Paragraph Animation */
+.header-section p {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto 20px auto;
+    line-height: 1.6;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-in-out forwards 0.5s;
+}
+
+/* Button Styling */
+.header-section .button1 {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeInScale 0.8s ease-in-out forwards 1s;
+}
+
+/* Button Hover Effect */
+.header-section .button1:hover {
+    background-color: #006400 !important;
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-section .display-4 {
+        font-size: 2rem;
+    }
+
+    .header-section p {
+        font-size: 1rem;
+        padding: 0 15px;
+    }
+
+    .header-section .button1 {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+}
+
+/* Row Styling */
+.welcomesection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+/* Initial Hidden State for Scroll Animation */
+.welcomesection p.text-center,
+.welcomesection img {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+/* When Element is in View */
+.show p.text-center {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.show img {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Keyframes for Smooth Entry */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .welcomesection {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .welcomesection p.text-center {
+        font-size: 1rem;
+    }
+
+    .welcomesection img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Section Heading Animation */
+.feature-section h1 {
+    opacity: 0;
+    transform: translateY(-30px);
+    transition: all 0.8s ease-out;
+}
+
+/* Feature Box Styling */
+.feature-section .col-md-4 {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+/* Image Rotation Animation */
+.feature-section .col-md-4 img {
+    opacity: 0;
+    transform: rotate(-15deg) scale(0.8);
+    transition: all 0.8s ease-out;
+}
+
+/* Button Animation */
+.feature-section .col-md-4 button {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease-out;
+}
+
+/* When in View, Apply Animations */
+.feature-section.show h1 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.feature-section.show .col-md-4 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.feature-section.show .col-md-4 img {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+
+/* Button Fade-in Effect */
+.feature-section.show .col-md-4 button {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .feature-section .col-md-4 {
+        margin-bottom: 20px;
+    }
+}
+
+/* Initial State - Hidden Elements */
+.user-said-section h1,
+.user-said-section .row {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+
+/* When in View, Apply Animations */
+.user-said-section.show h1,
+.user-said-section.show .row {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .user-said-section img {
+        transform: translateX(0);
+    }
+}
+
+/* Initial hidden state */
+.animated-section h1,
+.animated-section h5,
+.animated-section .row {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+/* Image animations */
+.animated-section img {
+    opacity: 0;
+    transition: all 0.8s ease-out;
+}
+
+/* Slide-in effects */
+.animated-section .row:nth-child(even) img {
+    transform: translateX(-50px);
+}
+
+.animated-section .row:nth-child(odd) img {
+    transform: translateX(50px);
+}
+
+/* When elements are in view */
+.animated-section.show h1,
+.animated-section.show h5,
+.animated-section.show .row {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.animated-section.show img {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .animated-section img {
+        transform: translateX(0);
+    }
+}

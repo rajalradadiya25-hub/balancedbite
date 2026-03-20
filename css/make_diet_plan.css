@@ -1,0 +1,158 @@
+.untitled-list {
+list-style: none;
+padding: 0;
+}
+
+.list {
+padding: 10px;
+border-bottom: 1px solid #ddd;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+body {
+font-family: 'Poppins', sans-serif;
+background-color: #f4f4f4;
+margin: 0;
+padding: 0;
+}
+
+.main-content {
+margin-left: 280px;
+padding: 20px;
+width: calc(100% - 280px);
+flex: 1;
+}
+
+.container {
+width: 80%;
+margin: auto;
+background: white;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+text-align: center;
+color: rgb(0, 128, 0);
+font-weight: bolder;
+}
+
+.recipe-list {
+width: 100%;
+display: inline-block;
+vertical-align: top;
+background: #fff;
+padding: 15px;
+border-radius: 8px;
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+transition: transform 0.3s ease;
+max-height: 400px;
+overflow-y: auto;
+margin-top: 30px;
+}
+
+table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 20px;
+}
+
+th,
+td {
+border: 1px solid #ddd;
+padding: 8px;
+text-align: left;
+}
+
+th {
+background-color: rgb(0, 128, 0);
+color: white;
+}
+
+button {
+background: rgb(0, 128, 0);
+color: white;
+border: none;
+padding: 8px 12px;
+cursor: pointer;
+border-radius: 5px;
+transition: background 0.3s ease;
+}
+
+button:hover {
+background: darkgreen;
+}
+
+select {
+padding: 5px;
+margin-right: 10px;
+border-radius: 5px;
+border: 1px solid #ccc;
+}
+
+.meal-section h4 {
+color: rgb(0, 128, 0);
+}
+
+.search-container {
+position: relative;
+width: 100%;
+display: flex;
+justify-content: center;
+/* Center horizontally */
+align-items: center;
+/* Center vertically (if needed) */
+margin-top: 20px;
+/* Optional: Adjust spacing from top */
+}
+
+.search-box {
+width: 50%;
+padding: 12px 40px 12px 35px;
+border: 2px solid rgb(0, 128, 0);
+border-radius: 25px;
+outline: none;
+font-size: 16px;
+transition: 0.3s;
+}
+
+.search-box:focus {
+border-color: darkgreen;
+box-shadow: 0 0 5px rgba(0, 128, 0, 0.5);
+}
+
+.search-icon {
+position: absolute;
+right: 27%;
+/* transform: translateY(-50%); */
+color: rgb(0, 128, 0);
+}
+
+.recipes-header {
+display: flex;
+justify-content: space-between;
+/* Space between title and button */
+align-items: center;
+padding: 10px 1px;
+border-radius: 10px;
+}
+
+.view-diet-btn {
+background-color: white;
+color: rgb(0, 128, 0);
+text-decoration: none;
+padding: 8px 15px;
+border-radius: 5px;
+font-weight: bold;
+transition: 0.3s ease;
+border: 2px solid white;
+}
+
+.view-diet-btn:hover {
+background-color: rgb(0, 100, 0);
+color: white;
+border: 2px solid white;
+}

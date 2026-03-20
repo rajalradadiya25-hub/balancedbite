@@ -1,0 +1,454 @@
+/* General Styling */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.main-content {
+  margin-left: 280px;
+  padding: 20px;
+  width: calc(100% - 280px);
+  flex: 1;
+  transition: 0.3s;
+}
+
+/* Chatbot Container with Fixed Height */
+.chatbot-container {
+  width: 400px;
+  height: 600px;
+  /* Set a fixed height */
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+/* Chat Header */
+.chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #008000;
+  padding: 12px;
+  color: white;
+  position: relative;
+}
+
+/* Logo & Header */
+.header-info {
+  display: flex;
+  align-items: center;
+}
+
+.chatbot-logo svg {
+  fill: white;
+}
+
+.logo-text {
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+/* Question Mark Button */
+.info-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  margin-left: auto;
+  transition: 0.3s ease;
+}
+
+.info-button:hover {
+  color: #ffeb3b;
+}
+
+/* Info Box */
+.info-box {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  background: white;
+  color: black;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 280px;
+  padding: 15px;
+  z-index: 1000;
+  font-size: 14px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Info Box Header */
+.info-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+}
+
+/* Close Button */
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  color: #333;
+  transition: 0.3s ease;
+}
+
+.close-btn:hover {
+  color: red;
+}
+
+/* Info Box Content */
+.info-content p {
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.info-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.info-content ul li {
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+}
+
+.info-content ul li i {
+  margin-right: 6px;
+  color: #008000;
+  font-size: 16px;
+}
+
+
+/* Bot Icon */
+.chatbot-logo {
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chatbot-logo svg {
+  width: 24px;
+  height: 24px;
+  fill: rgb(0, 128, 0);
+}
+
+.chat-body {
+  padding: 25px 22px;
+  gap: 20px;
+  display: flex;
+  height: 500px;
+  overflow-y: auto;
+  flex-direction: column;
+  scrollbar-width: thin;
+  scrollbar-color: #ccccf5 transparent;
+}
+
+.chat-body,
+.chat-form .message-input:hover {
+  scrollbar-color: #ccccf5 transparent;
+}
+
+.chat-body .message {
+  display: flex;
+  gap: 11px;
+  align-items: center;
+}
+
+.chat-body .message .bot-avatar {
+  width: 35px;
+  height: 35px;
+  padding: 6px;
+  fill: #fff;
+  flex-shrink: 0;
+  margin-bottom: 2px;
+  align-self: flex-end;
+  border-radius: 50%;
+  background: rgb(0, 128, 0);
+}
+
+.chat-body .message .message-text {
+  padding: 12px 16px;
+  max-width: 75%;
+  font-size: 0.95rem;
+}
+
+.chat-body .bot-message.thinking .message-text {
+  padding: 2px 16px;
+}
+
+.chat-body .bot-message .message-text {
+  background: #F2F2FF;
+  border-radius: 13px 13px 13px 3px;
+}
+
+.chat-body .user-message {
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.chat-body .user-message .message-text {
+  color: #fff;
+  background: rgb(0, 128, 0);
+  border-radius: 13px 13px 3px 13px;
+}
+
+.chat-body .user-message .attachment {
+  width: 50%;
+  margin-top: -7px;
+  border-radius: 13px 3px 13px 13px;
+}
+
+.chat-body .bot-message .thinking-indicator {
+  display: flex;
+  gap: 4px;
+  padding-block: 15px;
+}
+
+.chat-body .bot-message .thinking-indicator .dot {
+  height: 7px;
+  width: 7px;
+  opacity: 0.7;
+  border-radius: 50%;
+  background: rgb(0, 128, 0);
+  animation: dotPulse 1.8s ease-in-out infinite;
+}
+
+.chat-body .bot-message .thinking-indicator .dot:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.chat-body .bot-message .thinking-indicator .dot:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.chat-body .bot-message .thinking-indicator .dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Bot Message Styling */
+.message-text {
+  background: #f4f4ff;
+  /* Light bluish background */
+  color: black;
+  padding: 10px 15px;
+  border-radius: 12px;
+  max-width: 60%;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Chat Footer */
+.chat-footer {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background: white;
+  border-top: 1px solid #ddd;
+}
+
+/* Category Dropdown */
+.category-dropdown {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  background: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.category-dropdown:hover {
+  border-color: rgb(0, 128, 0);
+  box-shadow: 0 3px 7px rgba(0, 128, 0, 0.15);
+}
+
+/* Input Container */
+.input-container {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid rgba(180, 180, 180, 0.719);
+  border-radius: 25px;
+  padding: 8px 12px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  height: 48px;
+}
+
+.input-container:focus-within {
+  border: 2px solid rgb(0, 128, 0);
+  box-shadow: 0 2px 8px rgba(0, 128, 0, 0.2);
+}
+
+/* Message Input */
+.message-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  padding: 8px;
+  border-radius: 20px;
+  background: transparent;
+}
+
+/* Send Button */
+.send-button {
+  width: 30px;
+  height: 30px;
+  background: rgb(0, 128, 0);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.send-button:hover {
+  background: rgb(0, 100, 0);
+  transform: scale(1.1);
+}
+
+/* Send Button Icon */
+.send-button svg {
+  width: 18px;
+  height: 18px;
+  fill: white;
+}
+
+
+/* Thinking Indicator */
+.thinking-indicator {
+  display: inline-flex;
+  /* Allows the container to size dynamically */
+  align-items: center;
+  gap: 5px;
+  padding: 8px;
+  max-width: 100%;
+  /* Ensures it doesn't overflow */
+  min-height: 20px;
+  /* Small size when only dots are present */
+  background: rgba(0, 128, 0, 0.1);
+  /* Optional background */
+  border-radius: 10px;
+  /* Rounded edges */
+}
+
+.thinking-indicator .dot {
+  width: 6px;
+  height: 6px;
+  background: rgb(0, 128, 0);
+  border-radius: 50%;
+  animation: thinking 1.4s infinite;
+}
+
+.thinking-indicator .dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.thinking-indicator .dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Optional: Dynamic Text */
+.thinking-text {
+  font-size: 14px;
+  color: rgb(0, 128, 0);
+  margin-left: 5px;
+  white-space: nowrap;
+}
+
+/* Thinking Animation */
+@keyframes thinking {
+  0% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.3;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 450px) {
+  .chatbot-container {
+    width: 90%;
+  }
+}
+
+.advanced-usage {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.category-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.category-card {
+  background: #f4f4f4;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.category-card h4 {
+  margin-bottom: 8px;
+  color: rgb(0, 128, 0);
+}
+
+.category-card p {
+  font-size: 14px;
+  color: #333;
+}
